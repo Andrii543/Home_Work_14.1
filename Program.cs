@@ -16,11 +16,6 @@ namespace Home_Work_14._1
 
                 Console.Write("Введіть назву свого банку: ");
                 string bankName = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(bankName) || bankName == "")
-                {
-                    Console.WriteLine("Назва банку не може бути пустою, спробуйте ще раз");
-                    continue;
-                }
 
 
                 Account accountUa = new Account(bankName, 100.00m);
@@ -28,7 +23,7 @@ namespace Home_Work_14._1
                 Console.Write("Введіть своє ім'я: ");
                 string userName = Console.ReadLine();
 
-                accountUa.HelloUser(userName);
+                HelloUser(userName,bankName);
 
                 bool exitOperation = true;
 
@@ -72,12 +67,18 @@ namespace Home_Work_14._1
 
             Account accountPl = new Account("mBankPl", 234.23m);
 
+
             accountPl.CheckBalance();
 
             accountPl.Withdrawal(50);
 
-            accountPl.Deposit(50);
+            accountPl.Deposit(70);
 
+        }
+
+        static void HelloUser(string name, string bankName)
+        {
+            Console.WriteLine($"\nВітаю {name} в банку {bankName}\n");
         }
     }
 }
