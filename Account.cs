@@ -6,8 +6,6 @@
 
         private decimal balance;
 
-        private string name;
-
         public string BankAccount
         {
             get => bankAccount;
@@ -35,18 +33,6 @@
             }
         }
 
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
 
 
         public Account(string bankAccount, decimal balance)
